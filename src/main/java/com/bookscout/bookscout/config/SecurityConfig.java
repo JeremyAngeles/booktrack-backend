@@ -35,14 +35,16 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
+        // Agregamos el link de Vercel y el de Render por si acaso
         configuration.setAllowedOrigins(List.of(
                 "http://localhost:5173",
-                "https://booktrack-backend-5luo.onrender.com",
-                "https://booktrack-frontend-jeremy.vercel.app"
+                "https://booktrack-frontend-beta.vercel.app", // Tu link actual de Vercel
+                "https://booktrack-backend-5luo.onrender.com"
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("*"));
+        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept"));
         configuration.setAllowCredentials(true);
+
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
