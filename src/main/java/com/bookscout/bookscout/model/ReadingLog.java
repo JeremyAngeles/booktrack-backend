@@ -22,10 +22,10 @@ public class ReadingLog {
     @Min(1) @Max(5)
     private Integer rating;
 
-    @Column(columnDefinition = "NVARCHAR(MAX)")
+    @Column(columnDefinition = "TEXT")
     private String review;
 
-    @Column(name = "favorite_parts" , columnDefinition = "NVARCHAR(MAX)")
+    @Column(columnDefinition = "TEXT" ,name = "favorite_parts")
     private String favoriteParts;
 
     @Column(name = "start_date", nullable = false)

@@ -32,7 +32,7 @@ public class Book {
     @Column(name = "published_date")
     private String publishedDate;
 
-    @Column(columnDefinition = "VARCHAR(MAX)")
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @Column(name = "page_count")
